@@ -1,0 +1,47 @@
+// Requirements
+// ============
+
+@import "susy";
+
+$susy: (
+  columns: 12,
+  gutters: 1/4,
+  output: float,
+  gutter-position: split,
+);
+
+.container {
+	@include container(1170px);
+	padding-right: 15px;
+	padding-left: 15px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.main {
+	.row {
+		margin-left: -15px;
+		margin-right: -15px;
+		article {
+			@include span(4);
+		}
+	}
+}
+
+.about-wrap {
+	.about {
+		@include span(8);
+	}
+	.sider {
+		@include span(4 at 9);
+	}
+}
+
+.signup-wrap {
+	#guides {
+		@include span(6);
+	}
+	#moms {
+		@include span(6 at 6);
+	}
+}

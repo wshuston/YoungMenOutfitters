@@ -1,0 +1,146 @@
+#contact-form {
+  background-color: #fff;
+  width: 500px;
+  padding: 20px;
+  margin: 50px auto;
+  border: 6px solid $ymo-blue;
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  border-radius: 15px;
+  position: relative;
+  h1 {
+    font-size: 42px;
+  }
+  h2 {
+    margin-bottom: 15px;
+    font-style: italic;
+    font-weight: normal;
+  }
+  input, select, textarea, label {
+    font-size: 15px;
+    margin-bottom: 2px;
+  }
+  input, select, textarea {
+    width: 450px;
+    border: 1px solid #CEE1E8;
+    margin-bottom: 20px;
+    padding: 4px;
+  }
+  input:focus, select:focus {
+    border: 1px solid #AFCDD8;
+    background-color: #EBF2F4;
+  }
+  textarea {
+    &:focus {
+      border: 1px solid #AFCDD8;
+      background-color: #EBF2F4;
+    }
+    height: 150px;
+    resize: none;
+  }
+  label {
+    display: block;
+  }
+  .required {
+    font-weight: bold;
+    color: #F00;
+  }
+  #submit-button {
+    width: 100px;
+    background-color: $ymo-blue;
+    color: #FFF;
+    border: none;
+    display: block;
+    float: right;
+    margin-bottom: 0px;
+    margin-right: 6px;
+    -moz-border-radius: 8px;
+    &:hover {
+      background-color: lighten($ymo-blue, 10);
+    }
+    &:active {
+      position: relative;
+      top: 1px;
+    }
+  }
+  #loading {
+    width: 32px;
+    height: 32px;
+    background-image: url(../img/loading.gif);
+    display: block;
+    position: absolute;
+    right: 130px;
+    bottom: 16px;
+    display: none;
+  }
+}
+
+#errors {
+  border: solid 1px #E58E8E;
+  padding: 10px;
+  margin: 25px 0px;
+  display: block;
+  width: 437px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+  background: #ffe6e6 url(../img/cancel_48.png) no-repeat 405px center;
+  display: none;
+  li {
+    padding: 2px;
+    list-style: none;
+    &:before {
+      content: ' - ';
+    }
+  }
+  #info {
+    font-weight: bold;
+    &:before {
+      content: '';
+    }
+  }
+}
+
+#success {
+  border: solid 1px #83D186;
+  padding: 25px 10px;
+  margin: 25px 0px;
+  display: block;
+  width: 437px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+  background: #d3edd3 url(../img/accepted_48.png) no-repeat 405px center;
+  font-weight: bold;
+  display: none;
+}
+
+#errors.visible, #success.visible {
+  display: block;
+}
+
+#req-field-desc {
+  font-style: italic;
+}
+
+/* Remove box shadow firefox, chrome and opera put around required fields. It looks rubbish. */
+
+input:required, textarea:required {
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  -o-box-shadow: none;
+  box-shadow: none;
+}
+
+/* Normalize placeholder styles */
+
+/* chrome, safari */
+
+::-webkit-input-placeholder, input:-moz-placeholder, textarea:-moz-placeholder, input.placeholder-text, textarea.placeholder-text {
+  color: #CCC;
+  font-style: italic;
+}
+
+/* mozilla */
+
+/* ie (faux placeholder) */
